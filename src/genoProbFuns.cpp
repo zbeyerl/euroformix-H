@@ -23,7 +23,7 @@ double prob_relUnknown(int aindU, int bindU, int Ugind, double *Fvec, double fst
 	if(Uhom) { //if unknown is homozygote					
 		genoSum *= prob_a(Fvec[aindU],maTypedvec[aindU]+1,nTyped+1,fst); //calculate random match prob (always used) 					
 	} else { //if unknown is heterozygote variant
-		genoSum *= 2*prob_a(Fvec[bindU],maTypedvec[bindU],nTyped+1,fst); //calculate prob 2st allele  (and scale with 2)
+		genoSum *= 0 ;
 	}
 		
 	//Extension with kappa-coefficient: SEE FORMULAS IN TABLE A.3 in Book "A forensic practicioners guide...."
@@ -35,7 +35,7 @@ double prob_relUnknown(int aindU, int bindU, int Ugind, double *Fvec, double fst
 			if(Uhom) { //if unknown is homozygote
 				genoSum += prob_a(Fvec[aindU],maTypedvec[aindU],nTyped,fst)*ibd[1] ; //multiply with kappa1 
 			} else { //if unknown is heterozygote variant
-				genoSum += (prob_a(Fvec[aindU],maTypedvec[aindU],nTyped,fst)+prob_a(Fvec[bindU],maTypedvec[bindU],nTyped,fst))*ibd[1]/2 ; //multiply with kappa1 						
+				genoSum += 0 ;						
 			}	
 			
 		} else { //if not the same genotype we need to check overlap (a,b)~(c,d)
